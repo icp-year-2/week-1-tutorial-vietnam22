@@ -30,6 +30,11 @@ public class Topic {
     //
     // Hint: private int id;
     // ============================================================
+    private int id;
+    private String name;
+    LocalDateTime createdAt;
+    LocalDateTime updatedAt;
+
 
 
 
@@ -52,6 +57,14 @@ public class Topic {
     //       this.updatedAt = now;
     //   }
     // ============================================================
+    public Topic(int id, String name){
+        this.id = id;
+        this.name = name;
+        LocalDateTime now = LocalDateTime.now();
+        this.createdAt = now;
+        this.updatedAt = now;
+
+    }
 
 
 
@@ -71,6 +84,29 @@ public class Topic {
     //       this.updatedAt = LocalDateTime.now();
     //   }
     // ============================================================
+    public int getId(){
+        return this.id;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public LocalDateTime getCreatedAt(){
+        return this.createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt(){
+        return this.updatedAt;
+    }
+
+
+
+
 
 
 
@@ -82,6 +118,10 @@ public class Topic {
     //
     // Hint: return "[" + id + "] " + name + " (Created: " + createdAt + ")";
     // ============================================================
+
+    public String toString(){
+        return "[" + id + "] " + name + " (Created: " + createdAt + ")";
+    }
 
 
 }
